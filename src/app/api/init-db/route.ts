@@ -8,8 +8,8 @@ export async function GET(
   res: NextApiResponse
 ){
     try {
-      await createTables();
-      return new NextResponse('Created', { status: 201 })
+      // await createTables();
+      return NextResponse.json({"Database": "Created"}, { status: 201})
     } catch (error: any ) {
       console.error("Database initialization failed:", error);
       return new NextResponse('ServerError', { status: 500 })
