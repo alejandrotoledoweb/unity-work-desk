@@ -1,10 +1,10 @@
 // pages/api/init-db.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { createTables } from '../../../../lib/db';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(
-  req: NextApiRequest,
+  req: NextRequest,
   res: NextApiResponse
 ){
     try {

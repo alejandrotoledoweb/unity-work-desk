@@ -1,13 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 type ResponseData = {
-  message: string
-}
+  message: string;
+};
 
-export function GET(
-  req: NextApiRequest,
+export async function GET(
+  req: NextRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  return NextResponse.json({ message: 'Hello from Next.js!' })
+  // if (req.method === "GET") {
+    return NextResponse.json({ message: "Hello from Next.js!" });
+  // } else {
+  //   res.status(405).end(); // Method Not Allowed
+  // }
 }
